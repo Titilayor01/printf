@@ -1,4 +1,3 @@
-#include <stdarg.h>
 #include "main.h"
 
 /**
@@ -7,9 +6,11 @@
  *
  * Return: 1 always
  */
-int _char(va_list zab)
+int printf_char(va_list zab)
 {
-	char c = va_arg(zab, int);
+	char c;
+	
+	c = va_arg(zab, int);
 	_putchar(c);
 
 	return (1);
