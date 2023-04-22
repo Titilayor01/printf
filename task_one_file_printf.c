@@ -10,7 +10,10 @@
  * Return: The number of characters printed (excluding the null byte used to
  *         end output to strings), or -1 if an error occurs.
  */
+
+
 int _printf(const char *format, ...)
+
 {
 	va_list args;
 	int count = 0;
