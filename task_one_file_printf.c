@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 #include <stdarg.h>
 #include <unistd.h>
 
