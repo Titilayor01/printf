@@ -1,14 +1,14 @@
-#include <stdio.h>
+#include <main.h>
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * _putchar - writes the char c to stdout
+ * @c: This is the char to be printed
  *
- * Return: on success, returns the character printed as an unsigned char.
+ * Return: returns the character printed as an unsigned char on success
  * On error, EOF, and errno is set appropriately.
  */
 
 int _putchar(char c)
 {
-	return (putchar(1, &c, 1));
+	return (write(1, &c, 1));
 }
