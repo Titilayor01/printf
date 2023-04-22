@@ -17,8 +17,8 @@
 
 typedef struct format
 {
-    char *id;
-    int (*f)(va_list);
+	char *id;
+	int (*f)(va_list);
 } convert_match;
 
 int printf_HEX_aux(unsigned int num);
