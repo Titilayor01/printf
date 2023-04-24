@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * printf_oct - prints an octal number.
@@ -28,7 +29,7 @@ int printf_oct(va_list val)
 	}
 	for (i = counter - 1; i >= 0; i--)
 	{
-		_putchar(array[i] + '0');
+		putchar(array[i] + '0');
 	}
 	free(array);
 	return (counter);

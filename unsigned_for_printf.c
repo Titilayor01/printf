@@ -18,7 +18,7 @@ int printf_unsigned(va_list args)
 
 	if (last < 0)
 	{
-		_putchar('-');
+		putchar('-');
 		numx = -numx;
 		n = -n;
 		last = -last;
@@ -35,13 +35,13 @@ int printf_unsigned(va_list args)
 		while (exp > 0)
 		{
 			digit = numx / exp;
-			_putchar(digit + '0');
+			putchar(digit + '0');
 			numx = numx - (digit * exp);
 			exp = exp / 10;
 			t++;
 		}
 	}
-	_putchar(last + '0');
+	putchar(last + '0');
 
 	return (t);
 }
