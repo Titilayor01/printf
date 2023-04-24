@@ -1,36 +1,23 @@
 #include "main.h"
 
 /**
- * printf_hex_aux - prints an hexgecimal number.
- * @num: arguments.
- * Return: counter.
+ * printf_srev - function that prints a str in reverse
+ * @args: type struct va_arg where is allocated printf arguments
+ *
+ * Return: the string
  */
-int printf_hex_aux(unsigned long int num)
+int printf_srev(va_list args)
 {
-	long int i;
-	long int *array;
-	long int counter = 0;
-	unsigned long int temp = num;
 
-	while (num / 16 != 0)
-	{
-		num /= 16;
-		counter++;
-	}
-	counter++;
-	array = malloc(counter * sizeof(long int));
+	char *s = va_arg(args, char*);
+	int i;
+	int j = 0;
 
-	for (i = 0; i < counter; i++)
-	{
-		array[i] = temp % 16;
-		temp /= 16;
-	}
-	for (i = counter - 1; i >= 0; i--)
-	{
-		if (array[i] > 9)
-			array[i] = array[i] + 39;
-		_putchar(array[i] + '0');
-	}
-	free(array);
-	return (counter);
+	if (s == NULL)
+		s = "(null)";
+	while (s[j] != '\0')
+		j++;
+	for (i = j - 1; i >= 0; i--)
+		_putchar(s[i]);
+	return (j);
 }
