@@ -1,17 +1,15 @@
 #include "main.h"
 
 /**
- * _char - function that prints a character
- * @zab: argument passed
- *
- * Return: 1 always
+ * printf_char - prints a char.
+ * @val: arguments.
+ * Return: 1.
  */
-int printf_char(va_list zab)
+int printf_char(va_list val)
 {
-	char c;
-	
-	c = va_arg(zab, int);
-	_putchar(c);
+	char s;
 
+	s = va_arg(val, int);
+	_putchar(s);
 	return (1);
 }

@@ -1,42 +1,39 @@
 #include "main.h"
-
 /**
- *printf_exclusive_string - print exclusive strings
- *
- *@val: argument received
- *
- *Return: to return string length
+ * printf_exclusive_string - print exclusuives string.
+ * @val: argumen t.
+ * Return: the length of the string.
  */
 
 int printf_exclusive_string(va_list val)
 {
 	char *s;
-	int y, lenh = 0;
-	int cas;
+	int i, len = 0;
+	int cast;
 
 	s = va_arg(val, char *);
 	if (s == NULL)
 		s = "(null)";
-	for (y = 0; s[y] != '\0'; y++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[y] < 32 || s[y] >= 127)
+		if (s[i] < 32 || s[i] >= 127)
 		{
 			_putchar('\\');
 			_putchar('x');
-			lenh = lenh + 2;
-			cas = s[y];
-			if (cas < 16)
+			len = len + 2;
+			cast = s[i];
+			if (cast < 16)
 			{
 				_putchar('0');
-				lenh++;
+				len++;
 			}
-			lenh = lenh + printf_HEX_aux(cas);
+			len = len + printf_HEX_aux(cast);
 		}
 		else
 		{
-			_putchar(s[y]);
-			lenh++;
+			_putchar(s[i]);
+			len++;
 		}
 	}
-	return (lenh);
+	return (len);
 }
