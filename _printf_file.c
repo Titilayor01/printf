@@ -1,6 +1,7 @@
 #include "main.h"
 #include <unistd.h>
-
+#include <stdarg.h>
+#include <stdio.h>
 /**
  * find_correct_func - finding the format for _printf
  * @format: format
@@ -11,19 +12,19 @@ int (*find_correct_func(const char *format))(va_list)
 {
 unsigned int x = 0;
 code_f find_f[] = {
-{"c", print_char},
-{"s", print_string},
-{"i", print_int},
-{"d", print_dec},
-{"r", print_rev},
-{"b", print_bin},
+{"ch", print_char},
+{"str", print_string},
+{"x", print_int},
+{"dec", print_dec},
+{"v", print_rev},
+{"bin", print_bin},
 {"u", print_unsigned},
-{"o", print_octal},
-{"x", print_hex},
-{"X", print_HEX},
-{"R", print_rot13},
-{"S", print_S},
-{"p", print_p},
+{"oct", print_octal},
+{"hex", print_hex},
+{"HEX", print_HEX},
+{"r", print_rot13},
+{"s", print_S},
+{"P", print_p},
 {NULL, NULL}
 };
 
@@ -41,6 +42,7 @@ return (NULL);
  * @format: format
  * Return: size
  */
+
 int _printf(const char *format, ...)
 {
 va_list list;
